@@ -33,7 +33,7 @@ let mouse = {
 
 const numberOfCircles = 800
 const maxRadius = 40
-const colorArray = ['#916981', '#DE95C0', '#B28ADE', '#4C5D91', '#6886E0']
+const colorArray = ['#7E5EF0', '#2FB1F7', '#36E083', '#A4F72F', '#EDC52D']
 
 // window.addEventListener('mousemove', (event) => {
 //     mouse.x = event.x
