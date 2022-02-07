@@ -85,7 +85,7 @@ function Circle(x, y, dx, dy, radius) {
 }
 
 for (let i = 0; i < numberOfCircles; i++) {
-    let radius = 20
+    let radius = Math.random() * 3 + 1
     let x = Math.random() * (innerWidth - radius * 2) + radius
     let y = Math.random() * (innerHeight - radius * 2) + radius
     let dx = (Math.random() - 0.5)
