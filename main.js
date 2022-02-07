@@ -35,7 +35,7 @@ const numberOfCircles = 800
 const maxRadius = 40
 const colorArray = ['#916981', '#DE95C0', '#B28ADE', '#4C5D91', '#6886E0']
 
-window.addEventListener('touchmove', (event) => {
+window.addEventListener('mousemove', (event) => {
     mouse.x = event.x
     mouse.y = event.y
 })
