@@ -1,8 +1,6 @@
 const canvas = document.querySelector('canvas')
 let c = canvas.getContext('2d')
 
-const randomColor = () => '#' + Math.floor(Math.random() * 16777215).toString(16)
-
 canvas.width = window.innerWidth
 canvas.height = window.innerHeight
 
@@ -33,14 +31,20 @@ let mouse = {
     y: undefined
 }
 
-
-const numberOfCircles = 200
+const numberOfCircles = 800
 const maxRadius = 40
-const minRadius = 5
+const colorArray = ['#916981', '#DE95C0', '#B28ADE', '#4C5D91', '#6886E0']
 
 window.addEventListener('mousemove', (event) => {
     mouse.x = event.x
     mouse.y = event.y
+})
+
+window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth
+    canvas.height = window.innerHeight
+
+    init()
 })
 
 function Circle(x, y, dx, dy, radius) {
@@ -49,7 +53,8 @@ function Circle(x, y, dx, dy, radius) {
     this.dx = dx
     this.dy = dy
     this.radius = radius
-    this.color = randomColor()
+    this.minRadius = radius
+    this.color = colorArray[Math.floor(Math.random() * colorArray.length)]
 
     this.draw = () => {
         c.beginPath()
@@ -77,24 +82,27 @@ function Circle(x, y, dx, dy, radius) {
             if (this.radius < maxRadius) {
                 this.radius += 1
             }
-        } else if (this.radius > minRadius) {
+        } else if (this.radius > this.minRadius) {
             this.radius -= 1
         }
 
     }
 }
 
-for (let i = 0; i < numberOfCircles; i++) {
-    let radius = Math.random() * 3 + 1
-    let x = Math.random() * (innerWidth - radius * 2) + radius
-    let y = Math.random() * (innerHeight - radius * 2) + radius
-    let dx = (Math.random() - 0.5)
-    let dy = (Math.random() - 0.5)
 
-    circleArray.push(new Circle(x, y, dx, dy, radius))
+
+const init = () => {
+    circleArray = []
+    for (let i = 0; i < numberOfCircles; i++) {
+        let radius = Math.random() * 3 + 1
+        let x = Math.random() * (innerWidth - radius * 2) + radius
+        let y = Math.random() * (innerHeight - radius * 2) + radius
+        let dx = (Math.random() - 0.5)
+        let dy = (Math.random() - 0.5)
+
+        circleArray.push(new Circle(x, y, dx, dy, radius))
+    }
 }
-
-
 
 const animate = () => {
     requestAnimationFrame(animate)
@@ -104,4 +112,5 @@ const animate = () => {
 
 }
 
+init()
 animate()
