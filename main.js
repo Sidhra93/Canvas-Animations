@@ -54,9 +54,9 @@ window.addEventListener('resize', () => {
     init()
 })
 
-window.addEventListener('touchend', () => {
-    init()
-    // console.log('touch ended');
+window.addEventListener('touchend', (event) => {
+    mouse.x = undefined
+    mouse.y = undefined
 })
 
 function Circle(x, y, dx, dy, radius) {
