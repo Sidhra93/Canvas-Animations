@@ -1,7 +1,8 @@
 {
     "name": "Taali",
     "short_name": "Taali",
-    "start_url": "Canvas-Animations/",
+    "start_url": "/",
+    "id": "index.html",
     "display": "standalone",
     "background_color": "#FFE9D2",
     "theme_color": "#FFE1C4",
