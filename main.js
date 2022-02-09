@@ -35,17 +35,13 @@ const numberOfCircles = 800
 const maxRadius = 40
 const colorArray = ['#7E5EF0', '#2FB1F7', '#36E083', '#A4F72F', '#EDC52D']
 
-// window.addEventListener('mousemove', (event) => {
-//     mouse.x = event.x
-//     mouse.y = event.y
-
-// })
-
-window.addEventListener('touchmove', (event) => {
-    mouse.x = event.targetTouches[0].clientX
-    mouse.y = event.targetTouches[0].clientY
+window.addEventListener('mousemove', (event) => {
+    mouse.x = event.x
+    mouse.y = event.y
 
 })
+
+
 
 window.addEventListener('resize', () => {
     canvas.width = window.innerWidth
@@ -54,10 +50,16 @@ window.addEventListener('resize', () => {
     init()
 })
 
-window.addEventListener('touchend', (event) => {
-    mouse.x = undefined
-    mouse.y = undefined
-})
+// window.addEventListener('touchmove', (event) => {
+//     mouse.x = event.targetTouches[0].clientX
+//     mouse.y = event.targetTouches[0].clientY
+
+// })
+
+// window.addEventListener('touchend', (event) => {
+//     mouse.x = undefined
+//     mouse.y = undefined
+// })
 
 function Circle(x, y, dx, dy, radius) {
     this.x = x
