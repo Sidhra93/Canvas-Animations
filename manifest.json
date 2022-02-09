@@ -1,7 +1,7 @@
 {
     "name": "Taali",
     "short_name": "Taali",
-    "start_url": "../index.html",
+    "start_url": "https://sidhra93.github.io/Canvas-Animations/",
     "display": "standalone",
     "background_color": "#FFE9D2",
     "theme_color": "#FFE1C4",
